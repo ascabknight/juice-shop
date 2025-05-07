@@ -36,4 +36,4 @@ jobs:
           run: echo "${{ secrets.SLS_CLIENT_SECRET }}" | docker login tauruseer.azurecr.io -u "${{ secrets.SLS_CLIENT_ID }}" --password-stdin
 
         - name: Docker Run SCA - Dev tag
-          run: docker run -v "${{ github.workspace }}":/source tauruseer.azurecr.io/sca-scanner-pipeline:qa --scan-key="${{ secrets.SLS_SCAN_KEY }}" --env=qa
+          run: docker run -v "${{ github.workspace }}":/source tauruseer.azurecr.io/sast-scanner-pipeline:qa --scan-key="${{ secrets.SLS_SCAN_KEY }}" --env=qa
