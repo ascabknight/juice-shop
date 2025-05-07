@@ -30,7 +30,9 @@ jobs:
     steps:
         # Fetch project source with GitHub Actions Checkout.
         - name: Checkout repository
-          uses: actions/checkout@v3
+          uses: actions/checkout@v4
+          with: 
+              fetch-depth: '0'
 
         - name: Docker Login
           run: echo "${{ secrets.SLS_CLIENT_SECRET }}" | docker login tauruseer.azurecr.io -u "${{ secrets.SLS_CLIENT_ID }}" --password-stdin
